@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.amos.modules.mapper.GenColumnMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.amos.core.generator.entity.AmosGenColumnInfo">
+        <id column="id" property="id" />
+        <result column="table_name" property="tableName" />
+        <result column="column_name" property="columnName" />
+        <result column="comment" property="comment" />
+        <result column="column_type" property="columnType" />
+        <result column="field_type" property="fieldType" />
+        <result column="field_name" property="fieldName" />
+        <result column="is_required" property="isRequired" />
+        <result column="is_insert" property="isInsert" />
+        <result column="is_edit" property="isEdit" />
+        <result column="is_list" property="isList" />
+        <result column="is_query" property="isQuery" />
+        <result column="query_type" property="queryType" />
+        <result column="html_type" property="htmlType" />
+        <result column="dict_name" property="dictName" />
+        <result column="sort" property="sort" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, table_name, column_name, comment, column_type, field_type, field_name, is_required, is_insert, is_edit, is_list, is_query, query_type, html_type, dict_name, sort, create_by, create_time, update_by, update_time, is_deleted
+    </sql>
+
+</mapper>

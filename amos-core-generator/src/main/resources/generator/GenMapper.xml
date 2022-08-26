@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.amos.modules.mapper.GenMapper">
+
+    <select id="queryMySqlTablesPage" resultType="org.amos.core.generator.entity.AmosTable">
+        SELECT
+            table_name AS tableName,table_comment AS comment,table_collation AS codingFormat,create_time AS createTime
+        FROM
+            information_schema.TABLES
+        WHERE
+            table_schema = (SELECT DATABASE())
+            AND table_name LIKE '%%'
+        ORDER BY
+            create_time DESC
+    </select>
+    <select id="queryPostgreSqlTablesPage" resultType="org.amos.core.generator.entity.AmosTable">
+        SELECT
+            A.tablename AS tableName, obj_description(relfilenode, 'pg_class') AS comment, '' AS codingFormat,'' AS createTime
+        FROM
+            pg_tables A, pg_class B
+        WHERE
+            A.schemaname='%s' AND A.tablename = B.relname
+    </select>
+    <select id="queryOracleTablesPage" resultType="org.amos.core.generator.entity.AmosTable">
+        SELECT
+            TABLE_NAME AS tableName,COMMENTS AS comment, '' AS codingFormat,'' AS createTime
+        FROM
+            ALL_TAB_COMMENTS
+        WHERE
+            OWNER='%s'
+    </select>
+    <select id="queryMysqlColumnList" resultType="org.amos.core.generator.vo.GenColumnVo">
+        select * from information_schema.COLUMNS where TABLE_SCHEMA = (select database()) and TABLE_NAME=#{tableName}
+    </select>
+
+</mapper>

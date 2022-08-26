@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.amos.modules.mapper.GenTemplateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.amos.core.generator.entity.GenTemplate">
+        <result column="id" property="id" />
+        <result column="is_deleted" property="isDeleted" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="name" property="name" />
+        <result column="file_name" property="fileName" />
+        <result column="content" property="content" />
+        <result column="group_id" property="groupId" />
+        <result column="group_name" property="groupName" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        is_deleted,
+        create_by,
+        create_time,
+        update_by,
+        update_time,
+        name, file_name, content, group_id, group_name
+    </sql>
+
+</mapper>

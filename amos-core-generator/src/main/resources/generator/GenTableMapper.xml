@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.amos.modules.mapper.GenTableMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.amos.core.generator.entity.AmosGenTableInfo">
+        <id column="id" property="id" />
+        <result column="table_name" property="tableName" />
+        <result column="author" property="author" />
+        <result column="table_prefix" property="tablePrefix" />
+        <result column="class_name" property="className" />
+        <result column="package_name" property="packageName" />
+        <result column="module_name" property="moduleName" />
+        <result column="path" property="path" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_deleted" property="isDeleted" />
+    </resultMap>
+
+    <resultMap id="GenBaseResultMap" type="org.amos.core.generator.entity.AmosGenTableInfo">
+        <id column="id" property="id" />
+        <result column="table_name" property="tableName" />
+        <result column="author" property="author" />
+        <result column="table_prefix" property="tablePrefix" />
+        <result column="class_name" property="className" />
+        <result column="package_name" property="packageName" />
+        <result column="module_name" property="moduleName" />
+        <result column="path" property="path" />
+        <result column="create_by" property="createBy" />
+        <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_deleted" property="isDeleted" />
+        <collection property="columns" column="table_name" select="selectColumnInfo"/>
+    </resultMap>
+
+    <resultMap id="QueryResultMap" type="org.amos.core.generator.vo.GenTableVo">
+        <id column="id" property="id" />
+        <result column="table_name" property="tableName" />
+        <result column="author" property="author" />
+        <result column="table_prefix" property="tablePrefix" />
+        <result column="class_name" property="className" />
+        <result column="package_name" property="packageName" />
+        <result column="module_name" property="moduleName" />
+        <result column="path" property="path" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, table_name, author, table_prefix, class_name, package_name, module_name, path, create_by, create_time, update_by, update_time, is_deleted
+    </sql>
+
+    <!-- 配置信息查询结果列 -->
+    <sql id="Gen_Table_Info">
+        id, table_name, author, table_prefix, class_name, package_name, module_name, path
+    </sql>
+
+    <sql id="Column_Info_List">
+        id, table_name, column_name, comment, column_type, field_type, field_name, is_required, is_insert, is_edit, is_list, is_query, query_type, html_type, dict_name, sort, create_by, create_time, update_by, update_time, is_deleted
+    </sql>
+
+    <select id="selectGenInfo" resultMap="GenBaseResultMap">
+        SELECT <include refid="Base_Column_List"/> FROM amos_gen_table_info WHERE is_deleted = 0 AND table_name = #{tableName}
+    </select>
+
+    <select id="selectColumnInfo" resultType="org.amos.core.generator.entity.AmosGenColumnInfo">
+        SELECT <include refid="Column_Info_List"/> FROM amos_gen_column_info WHERE is_deleted = 0 AND table_name = #{tableName}
+    </select>
+</mapper>

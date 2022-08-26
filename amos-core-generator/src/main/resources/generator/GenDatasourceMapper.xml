@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.amos.modules.mapper.GenDatasourceMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.amos.core.generator.entity.GenDatasource">
+        <result column="id" property="id" />
+        <result column="is_deleted" property="isDeleted" />
+        <result column="db_type" property="dbType" />
+        <result column="driver_class" property="driverClass" />
+        <result column="db_name" property="dbName" />
+        <result column="host" property="host" />
+        <result column="port" property="port" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="package_name" property="packageName" />
+        <result column="del_prefix" property="delPrefix" />
+        <result column="group_id" property="groupId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        is_deleted,
+        db_type, driver_class, db_name, host, port, username, password, package_name, del_prefix, group_id
+    </sql>
+
+</mapper>
