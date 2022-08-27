@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>amos-core-starter</artifactId>
-        <groupId>org.amos</groupId>
+        <groupId>io.github.lbtee</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -18,7 +18,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.amos</groupId>
+            <groupId>io.github.lbtee</groupId>
             <artifactId>amos-core-basic</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

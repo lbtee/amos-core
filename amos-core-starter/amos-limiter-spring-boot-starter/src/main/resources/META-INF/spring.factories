@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.amos.starter.limiter.LimiterAutoConfiguration
+org.amos.limiter.LimiterAutoConfiguration

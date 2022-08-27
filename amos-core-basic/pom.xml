@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.amos</groupId>
+        <groupId>io.github.lbtee</groupId>
         <artifactId>amos-core</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>org.amos</groupId>
+    <groupId>io.github.lbtee</groupId>
     <artifactId>amos-core-basic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>amos-core-basic</name>
@@ -19,13 +19,13 @@
 
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>
