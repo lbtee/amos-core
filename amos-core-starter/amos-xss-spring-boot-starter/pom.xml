@@ -9,7 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>io.github.lbtee</groupId>
     <artifactId>amos-xss-spring-boot-starter</artifactId>
+    <version>0.0.3-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.jsoup</groupId>
